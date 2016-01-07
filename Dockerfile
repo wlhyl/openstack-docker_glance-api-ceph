@@ -7,8 +7,10 @@ ENV BASE_VERSION 2015-01-07
 ENV OPENSTACK_VERSION liberty
 ENV BUID_VERSION 2015-01-07
 
+ADD ceph.repo /etc/yum.repos.d/ceph.repo
+
 RUN yum update -y && \
-         yum install -y openstack-glance python-glance python-glanceclient && \
+         yum install -y openstack-glance python-glance python-glanceclient python-rbd && \
          rm -rf /var/cache/yum/*
 
 RUN cp -rp /etc/glance/ /glance && \
