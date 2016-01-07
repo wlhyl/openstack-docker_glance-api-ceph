@@ -68,6 +68,7 @@ if [ ! -f /etc/glance/.complete ];then
 fi
 
 chown -R glance:glance /var/log/glance/
+chown glance:glance /etc/ceph/ceph.client.glance.keyring
 
 # 同步数据库
 echo 'select * from images limit 1;' | mysql -h$GLANCE_DB  -uglance -p$GLANCE_DBPASS glance
