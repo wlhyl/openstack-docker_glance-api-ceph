@@ -19,7 +19,6 @@ RUN cp -rp /etc/glance/ /glance && \
 
 VOLUME ["/etc/glance"]
 VOLUME ["/var/log/glance"]
-VOLUME ["/var/lib/glance/images/"]
 VOLUME ["/etc/ceph/"]
 
 ADD entrypoint.sh /usr/bin/entrypoint.sh
